@@ -99,9 +99,9 @@ model = tf.keras.models.Sequential([
     ResNet152V2(weights="imagenet", include_top=False, input_tensor=Input(shape=(224, 224, 3))),
     # tf.keras.layers.Conv2D(16, (3,3), activation='relu', input_shape=(150, 150, 3)),
     tf.keras.layers.Flatten(), 
-    tf.keras.layers.Dense(512, activation='relu'),
-    tf.keras.layers.Dropout(0.5),
     tf.keras.layers.Dense(256, activation='relu'),
+    tf.keras.layers.Dropout(0.5),
+    tf.keras.layers.Dense(512, activation='relu'),
     tf.keras.layers.Dropout(0.25),
     tf.keras.layers.Dense(5, activation='softmax')  
 ])
